@@ -23,6 +23,9 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<lombok.version>1.16.16</lombok.version>
+		<graphql.tools.version>4.1.2</graphql.tools.version>
+		<graphql.annotations.version>3.0.3</graphql.annotations.version>
+		<graphql.boot.version>3.9.2</graphql.boot.version>
 	</properties>
 
 	<dependencies>
@@ -60,6 +63,31 @@
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
+		</dependency>
+
+		<!-- GraphQl -->
+		<dependency>
+			<groupId>com.graphql-java</groupId>
+			<artifactId>graphql-java-tools</artifactId>
+			<version>${graphql.tools.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.graphql-java</groupId>
+			<artifactId>graphql-java-annotations</artifactId>
+			<version>${graphql.annotations.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.graphql-java</groupId>
+			<artifactId>graphql-spring-boot-starter</artifactId>
+			<version>${graphql.boot.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.graphql-java</groupId>
+			<artifactId>graphiql-spring-boot-starter</artifactId>
+			<version>${graphql.boot.version}</version>
 		</dependency>
 	</dependencies>
 	<build>

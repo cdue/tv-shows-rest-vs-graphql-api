@@ -1,0 +1,63 @@
+# Root Query
+type Query {
+    # List every TV show
+    tvShows: [TvShow!]!
+
+    # Get one TV Show using its ID
+    tvShow(id: ID!): TvShow
+
+    # List every Actor
+    actors: [Actor]
+}
+
+# Root Mutation
+type Mutation {
+    # Vote for a TV Show. Give it from 0 to 5 stars.
+    voteForTvShow(tvShowId: ID!, stars: Int!) : TvShow!
+}
+
+# TV Show
+type TvShow {
+    id: ID!
+    title: String!
+    description: String @deprecated(reason: "Will be replaced with short and long descriptions")
+    posterPath: String
+    seasons(last: Int): [Season]
+    actors: [Actor]
+    rating: TvShowRating
+}
+
+# Season related to a TV show
+type Season {
+    id: ID!
+    title: String!
+    releaseYear: Int
+    description: String
+    posterPath: String
+    tvShow: TvShow!
+    episodes: [Episode]
+}
+
+# Episode of a given TV show season
+type Episode {
+    id: ID!
+    title: String!
+    description: String
+    numberInSeason: Int
+    season: Season!
+}
+
+# Actor of one or more TV shows
+type Actor {
+    id: ID!
+    firstName: String
+    lastName: String
+    birthDate: String
+    tvShows: [TvShow]
+}
+
+# TV Show rating
+type TvShowRating {
+    averageRating: Float
+    nbVotes: Int
+}

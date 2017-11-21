@@ -1,5 +1,20 @@
 server:
   port: 8080
+  # Do not set the contextPath as we are building our GraphQl API in the same project as the REST API.
+  # otherwise, the default GraphQl path would be: /api/v1/graphql instead of /graphql
+  # contextPath: /api/v1
+
+# Update the following configuration if you need custom behaviour for your GraphQl API:
+#graphql:
+#  servlet:
+#    mapping: /graphql
+#    enabled: true
+#    corsEnabled: true
+
+#graphiql:
+#  mapping: /graphiql
+#  endpoint: /graphql
+#  enabled: true
 
 ###
 #   Database Settings
