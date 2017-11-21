@@ -1,15 +1,22 @@
 package com.cdue.tvshows.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "vote")
-public class Vote {
+@Getter
+@Setter
+@NoArgsConstructor
+public class Vote implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,36 +32,9 @@ public class Vote {
     @Max(5)
     private Integer nbStars;
 
-    public Vote() {
-    }
-
     public Vote(TvShow tvShow, Integer nbStars) {
         this.tvShow = tvShow;
         this.nbStars = nbStars;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Integer getNbStars() {
-        return nbStars;
-    }
-
-    public void setNbStars(Integer nbStars) {
-        this.nbStars = nbStars;
-    }
-
-    public TvShow getTvShow() {
-        return tvShow;
-    }
-
-    public void setTvShow(TvShow tvShow) {
-        this.tvShow = tvShow;
     }
 
     @Override

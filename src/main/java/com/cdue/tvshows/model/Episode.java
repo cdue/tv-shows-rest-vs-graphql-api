@@ -1,13 +1,20 @@
 package com.cdue.tvshows.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "episode")
-public class Episode {
+@Getter
+@Setter
+@NoArgsConstructor
+public class Episode implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,53 +33,10 @@ public class Episode {
     @JsonIgnore
     private Season season;
 
-    public Episode() {
-    }
-
     public Episode(String title, String description, Integer numberInSeason, Season season) {
         this.title = title;
         this.description = description;
         this.numberInSeason = numberInSeason;
-        this.season = season;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Integer getNumberInSeason() {
-        return numberInSeason;
-    }
-
-    public void setNumberInSeason(Integer numberInSeason) {
-        this.numberInSeason = numberInSeason;
-    }
-
-    public Season getSeason() {
-        return season;
-    }
-
-    public void setSeason(Season season) {
         this.season = season;
     }
 

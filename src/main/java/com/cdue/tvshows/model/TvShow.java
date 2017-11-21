@@ -1,15 +1,22 @@
 package com.cdue.tvshows.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "tv_show")
-public class TvShow {
+@Getter
+@Setter
+@NoArgsConstructor
+public class TvShow implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -50,69 +57,10 @@ public class TvShow {
     @JsonIgnore
     private List<Actor> actors = new ArrayList<>();
 
-    public TvShow() {
-    }
-
     public TvShow(String title, String description, String posterPath) {
         this.title = title;
         this.description = description;
         this.posterPath = posterPath;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getPosterPath() {
-        return posterPath;
-    }
-
-    public void setPosterPath(String posterPath) {
-        this.posterPath = posterPath;
-    }
-
-    public List<Season> getSeasons() {
-        return seasons;
-    }
-
-    public void setSeasons(List<Season> seasons) {
-        this.seasons = seasons;
-    }
-
-    public List<Vote> getVotes() {
-        return votes;
-    }
-
-    public void setVotes(List<Vote> votes) {
-        this.votes = votes;
-    }
-
-    public List<Actor> getActors() {
-        return actors;
-    }
-
-    public void setActors(List<Actor> actors) {
-        this.actors = actors;
     }
 
     public void addSeason(Season season) {
