@@ -13,14 +13,21 @@ type Query {
 # Root Mutation
 type Mutation {
     # Vote for a TV Show. Give it from 0 to 5 stars.
-    voteForTvShow(tvShowId: ID!, stars: Int!) : TvShow!
+    voteForTvShow(tvShowId: ID!, stars: Int!): TvShow!
+}
+
+# Root Subscription
+type Subscription {
+    # Subscribe to TV show rating updates and get a stream of updated values
+    getTvShowRatingUpdates(tvShowId: ID!): TvShowRating
 }
 
 # TV Show
 type TvShow {
     id: ID!
     title: String!
-    description: String @deprecated(reason: "Will be replaced with short and long descriptions")
+    shortDescription: String @deprecated(reason: "Renamed as 'description' as no long description exists")
+    description: String
     posterPath: String
     seasons(last: Int): [Season]
     actors: [Actor]

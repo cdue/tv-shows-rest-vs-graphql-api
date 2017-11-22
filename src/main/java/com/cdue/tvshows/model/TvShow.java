@@ -26,6 +26,9 @@ public class TvShow implements Serializable {
     private String title;
 
     @Lob
+    private String shortDescription;
+
+    @Lob
     private String description;
 
     private String posterPath;
