@@ -24,7 +24,6 @@
 		<java.version>1.8</java.version>
 		<lombok.version>1.16.16</lombok.version>
 		<graphql.tools.version>4.1.2</graphql.tools.version>
-		<graphql.annotations.version>3.0.3</graphql.annotations.version>
 		<graphql.boot.version>3.9.2</graphql.boot.version>
 	</properties>
 
@@ -70,12 +69,6 @@
 			<groupId>com.graphql-java</groupId>
 			<artifactId>graphql-java-tools</artifactId>
 			<version>${graphql.tools.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.graphql-java</groupId>
-			<artifactId>graphql-java-annotations</artifactId>
-			<version>${graphql.annotations.version}</version>
 		</dependency>
 
 		<dependency>
