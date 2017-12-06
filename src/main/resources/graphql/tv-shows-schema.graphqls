@@ -16,12 +16,6 @@ type Mutation {
     voteForTvShow(tvShowId: ID!, stars: Int!): TvShow!
 }
 
-# Root Subscription
-type Subscription {
-    # Subscribe to TV show rating updates and get a stream of updated values
-    getTvShowRatingUpdates(tvShowId: ID!): TvShowRating
-}
-
 # TV Show
 type TvShow {
     id: ID!
@@ -67,4 +61,5 @@ type Actor {
 type TvShowRating {
     averageRating: Float
     nbVotes: Int
+    tvShow: TvShow!
 }

@@ -15,7 +15,7 @@ public class AverageRating implements Serializable {
     private Double averageRating;
     private Long nbVotes;
 
-    @JsonIgnore
+    // @JsonIgnore
     private TvShow tvShow;
 
     public AverageRating(Double averageRating, Long nbVotes, TvShow tvShow) {

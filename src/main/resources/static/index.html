@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GraphQL Subscription WebSocket</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/app.js"></script>
+</head>
+<body>
+<noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
+    enabled. Please enable
+    Javascript and reload this page!</h2></noscript>
+
+<div class="jumbotron text-center">
+    <h2>TV Show rating Subscriptions</h2>
+    <p>Here is a GraphQL Subscription Example. It receives TV shows rating updates over websockets</p>
+</div>
+
+<div id="main-content" class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="connect">WebSocket connection:</label>
+                    <button id="connect" class="btn btn-default" type="submit">Connect</button>
+                    <button id="disconnect" class="btn btn-default" type="submit" disabled="disabled">Disconnect
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="tvShowId">Which TV Show ratings would you like to keep track of?</label>
+                    <input type="text" id="tvShowId" class="form-control" placeholder="TV Show ID...">
+                </div>
+                <button id="send" class="btn btn-default" type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table id="tv-show-rating" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>TV Show rating</th>
+                </tr>
+                </thead>
+                <tbody id="rating">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
