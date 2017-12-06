@@ -22,9 +22,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<lombok.version>1.16.16</lombok.version>
-		<graphql.tools.version>4.1.2</graphql.tools.version>
-		<graphql.boot.version>3.9.2</graphql.boot.version>
+		<lombok.version>1.16.18</lombok.version>
+		<graphql.tools.version>4.3.0</graphql.tools.version>
+		<graphql.boot.version>3.10.0</graphql.boot.version>
 	</properties>
 
 	<dependencies>
