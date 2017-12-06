@@ -1,9 +1,8 @@
-package com.cdue.tvshows.graphql.servlet;
+package com.cdue.tvshows.graphql.error;
 
 import graphql.GraphQLError;
 import graphql.servlet.DefaultGraphQLErrorHandler;
 import graphql.servlet.GenericGraphQLError;
-import graphql.servlet.GraphQLErrorHandler;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
