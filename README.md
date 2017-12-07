@@ -25,6 +25,13 @@ And the GraphiQL tool is accessible at [http://localhost:8080/graphiql](http://l
 ## GraphQL Subscription
 - A `SchemaBuilder` class adds a Subscription root type to the previously created .graphls schema.
 - Add reactive communication between client and server using web-sockets and RxJava  
+- Subscriptions use the `ws-subscription` endpoint for web-sockets
+- Have a look at the client at [http://localhost:8080/](http://localhost:8080/)
+    - Click on the button to connect to the web-socket
+    - Enter a TV Show ID (for example: 1)
+    - Click on Send button to send the subscription request
+    - Open another tab with GraphiQL and send a few mutations to vote for a TV Show
+    - Go back to the previous browser tab and see that data has been updated
 
 _This demonstrates the subscription concept, but we'll need to:_
 - replace server side database polling by real events fired for example from JPA `@PostPersist` and `@PostUpdate` callbacks.
