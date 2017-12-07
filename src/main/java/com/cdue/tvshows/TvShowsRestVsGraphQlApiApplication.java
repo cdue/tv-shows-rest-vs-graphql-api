@@ -10,11 +10,5 @@ public class TvShowsRestVsGraphQlApiApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(TvShowsRestVsGraphQlApiApplication.class, args);
-
-        // Comment the following to load Schema from tv-shows-schema.graphqls
-        /*@Bean
-        GraphQLSchema schema() {
-            return schemaBuilder.getSchema();
-        }*/
     }
 }
