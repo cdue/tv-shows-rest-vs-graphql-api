@@ -32,6 +32,12 @@ public class Vote implements Serializable {
     @Max(5)
     private Integer nbStars;
 
+    /*@PostPersist
+    @PostUpdate
+    public void onVoteChange() {
+        // We could use this method to send average rating update to Subscribers (subscription.getTvShowRatingUpdates)
+    }*/
+
     public Vote(TvShow tvShow, Integer nbStars) {
         this.tvShow = tvShow;
         this.nbStars = nbStars;
